@@ -1,1 +1,0 @@
-This project implements a Pizza class in Java, designed to model customizable pizzas with various crust types, toppings, and sizes using enumerated types. The PizzaDemo class tests the functionality by creating and comparing different pizza objects. 
