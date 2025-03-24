@@ -57,6 +57,7 @@ public class Polynomial {
         }
     }
     
+    // deep copy constructor
     public Polynomial(Polynomial otherPoly) {
         this.firstNode = new Node(otherPoly.firstNode.getCoefficient(), otherPoly.firstNode.getExponent(), null);
         Node walker = otherPoly.firstNode.getNextNode();
@@ -88,18 +89,12 @@ public class Polynomial {
 
             // print each term in their correct form
             switch (walker.getExponent()) {
-                case 0:
-                    // constant term (no "x")
+                case 0 -> // constant term (no "x")
                     System.out.print(walker.getCoefficient());
-                    break;
-                case 1:
-                    // linear term (coefficient * x)
+                case 1 -> // linear term (coefficient * x)
                     System.out.print(walker.getCoefficient() + "x");
-                    break;
-                default:
-                    // higher exponent terms (coefficient * x^exponent)
+                default -> // higher exponent terms (coefficient * x^exponent)
                     System.out.print(walker.getCoefficient() + "x^" + walker.getExponent());
-                    break;
             }
 
             walker = walker.getNextNode();
