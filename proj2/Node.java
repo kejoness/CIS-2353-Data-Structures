@@ -4,13 +4,13 @@
 // Project 2
 
 public class Node {
-    private int exponent;
     private int coefficient;
+    private int exponent;
     private Node nextNode;
 
-    public Node(int exponent, int coefficient, Node nextNode) {
-        this.exponent = exponent;
+    public Node(int coefficient, int exponent, Node nextNode) {
         this.coefficient = coefficient;
+        this.exponent = exponent;
         this.nextNode = nextNode;
     }
 
