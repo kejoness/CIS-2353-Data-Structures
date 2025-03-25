@@ -15,7 +15,7 @@ public class Polynomial {
         // take a string poly, break it up using split() method,
         // put components into nodes, and chain them
         firstNode = null;
-        String[] expression = poly.split("(?=[+-])");
+        String[] expression = poly.split("\\+");
         Node current = null;
 
         for(String monomial : expression) {
