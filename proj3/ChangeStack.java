@@ -1,4 +1,4 @@
-
+// Kayla Jones
 // Project 3
 // CIS 2353
 // Winter 2025
@@ -40,5 +40,13 @@ public class ChangeStack {
             topNode = topNode.getNextNode();
             return topNode.getData();
         }
+    }
+
+    public void increaseValues(int k, int amount) {
+
+    }
+
+    public void decreaseValues(int k, int amount) {
+
     }
 }
