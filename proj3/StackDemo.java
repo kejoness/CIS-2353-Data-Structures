@@ -13,7 +13,25 @@ public class StackDemo {
         stack.push(9);
         stack.push(6);
 
-        System.out.println("Stack: " + stack);
+        stack.printStack();
         System.out.println("Top of current stack: " + stack.peekTop());
+
+        stack.increaseValues(2, 5);
+        stack.printStack();
+
+        stack.decreaseValues(2, 4);
+        stack.printStack();
+
+        stack.pop();
+        stack.printStack();
+        System.out.println("Top of current stack: " + stack.peekTop());
+        
+        stack.pop();
+        stack.printStack();
+        stack.pop();
+        
+        System.out.println("Top of current stack: " + stack.peekTop());
+        stack.pop();
+        System.out.println(stack.peekTop());
     }
 }

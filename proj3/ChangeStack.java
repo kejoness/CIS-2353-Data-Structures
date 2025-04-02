@@ -18,6 +18,18 @@ public class ChangeStack {
         return topNode == null;
     }
 
+    // print entire stack
+    public void printStack() {
+        Node current = topNode;
+        System.out.print("Stack: ");
+
+        while (current != null) {
+            System.out.print(current.getData() + " ");
+            current = current.getNextNode();
+        }
+        System.out.println();
+    }
+
     // add new node to top of linked stack
     public void push(int item) {
         topNode = new Node(item, topNode);
@@ -43,10 +55,58 @@ public class ChangeStack {
     }
 
     public void increaseValues(int k, int amount) {
-
+        if (isEmpty()) return;
+        
+        Node current = topNode;
+        int count = 0;
+        
+        // traverse to the bottom of the stack
+        while (current.getNextNode() != null) {
+            current = current.getNextNode();
+            count++;
+        }
+        
+        // determine how many elements to adjust
+        int adjustCount = Math.min(count + 1, k);
+        current = topNode;
+        
+        // traverse again and update the bottom k elements
+        for (int i = 0; i < count + 1 - adjustCount; i++) {
+            current = current.getNextNode();
+        }
+        
+        while (adjustCount > 0 && current != null) {
+            current.setData(current.getData() + amount);
+            current = current.getNextNode();
+            adjustCount--;
+        }
     }
 
     public void decreaseValues(int k, int amount) {
-
+        if (isEmpty()) return;
+        
+        Node current = topNode;
+        int count = 0;
+        
+        // traverse to the bottom of the stack
+        while (current.getNextNode() != null) {
+            current = current.getNextNode();
+            count++;
+        }
+        
+        // determine how many elements to adjust
+        int adjustCount = Math.min(count + 1, k);
+        current = topNode;
+        
+        // traverse again and update the bottom k elements
+        for (int i = 0; i < count + 1 - adjustCount; i++) {
+            current = current.getNextNode();
+        }
+        
+        while (adjustCount > 0 && current != null) {
+            current.setData(current.getData() - amount);
+            current = current.getNextNode();
+            adjustCount--;
+        }
     }
 }
